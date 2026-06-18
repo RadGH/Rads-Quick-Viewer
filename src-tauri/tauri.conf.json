@@ -1,0 +1,83 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Rads Quick Viewer",
+  "version": "0.1.0",
+  "identifier": "com.radley.radsquickviewer",
+  "build": {
+    "beforeDevCommand": "node ./node_modules/vite/bin/vite.js --host 127.0.0.1",
+    "devUrl": "http://127.0.0.1:1420",
+    "beforeBuildCommand": "node ./node_modules/vite/bin/vite.js build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "Rads Quick Viewer",
+        "width": 1100,
+        "height": 780,
+        "minWidth": 520,
+        "minHeight": 420,
+        "resizable": true,
+        "fullscreen": false
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["nsis"],
+    "category": "Utility",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/icon.ico"
+    ],
+    "shortDescription": "Lightweight quick file viewer",
+    "longDescription": "Rads Quick Viewer is a quick-opening viewer for documents, images, audio, and video files.",
+    "fileAssociations": [
+      {
+        "ext": ["md", "markdown"],
+        "name": "Markdown Document",
+        "description": "Markdown document"
+      },
+      {
+        "ext": ["eml"],
+        "name": "Email Message",
+        "description": "Email message"
+      },
+      {
+        "ext": ["png", "jpg", "jpeg", "gif", "webp", "bmp", "tif", "tiff", "ico", "svg", "avif", "heic", "heif"],
+        "name": "Image File",
+        "description": "Image file"
+      },
+      {
+        "ext": ["mp3", "wav", "ogg", "oga", "flac", "m4a", "aac", "opus"],
+        "name": "Audio File",
+        "description": "Audio file"
+      },
+      {
+        "ext": ["mp4", "m4v", "webm", "ogv", "mov", "avi", "mkv"],
+        "name": "Video File",
+        "description": "Video file"
+      },
+      {
+        "ext": ["txt", "text", "log", "csv", "tsv", "json", "xml", "yaml", "yml", "toml", "ini", "html", "htm", "css", "js", "jsx", "ts", "tsx", "rs", "py", "php", "rb", "go", "java", "c", "cpp", "h", "hpp", "cs", "sql"],
+        "name": "Text File",
+        "description": "Text file"
+      },
+      {
+        "ext": ["docx"],
+        "name": "Word Document",
+        "description": "Word document text"
+      }
+    ],
+    "windows": {
+      "nsis": {
+        "displayLanguageSelector": false,
+        "installerIcon": "icons/icon.ico"
+      }
+    }
+  }
+}

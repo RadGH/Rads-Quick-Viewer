@@ -1,0 +1,26 @@
+{
+  "name": "rads-quick-viewer",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tauri dev",
+    "build": "tauri build",
+    "preview": "vite --host 127.0.0.1",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "^2.0.0",
+    "dompurify": "^3.2.6",
+    "marked": "^15.0.12",
+    "preact": "^10.26.9"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.0.0",
+    "@types/dompurify": "^3.0.5",
+    "@types/node": "^22.15.21",
+    "@preact/preset-vite": "^2.10.1",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.5"
+  }
+}

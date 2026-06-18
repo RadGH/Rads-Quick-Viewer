@@ -1,0 +1,28 @@
+[package]
+name = "rads-quick-viewer"
+version = "0.1.0"
+description = "A lightweight quick viewer for documents and media."
+authors = ["Radley Sustaire"]
+edition = "2021"
+
+[lib]
+name = "rads_viewer_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+base64 = "0.22"
+image = { version = "0.25", default-features = false, features = ["bmp", "gif", "ico", "jpeg", "png", "tiff", "webp"] }
+kamadak-exif = "0.6"
+mailparse = "0.16"
+rfd = "0.15"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tauri = { version = "2", features = [] }
+zip = { version = "2", default-features = false, features = ["deflate"] }
+
+[features]
+default = ["custom-protocol"]
+custom-protocol = ["tauri/custom-protocol"]
